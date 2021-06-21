@@ -7,48 +7,84 @@
     <title>Tabla Perfil</title>
     <script>
 
-        document.writeln("<center>");
-        document.writeln("<h1>Tabla Perfil en JavaScript</h1>");
+        var fecha = new Date();
+        var horas = fecha.getHours();
+
+        if(horas > 23, horas < 12 ){
+            alert("¡Buenos Dias! Bienvenido, Ingresa los datos solicitados");
+        }else if(horas > 11, horas < 19){
+            alert("¡Buenas Tardes! Bienvenido, Ingresa los datos solicitados");
+        }else{
+            alert("¡Buenas Noches! Bienvenido, Ingresa los datos solicitados");
+        }
+
+        var nombre = "";
+        var edad = 0 ;
+        var localidad = "";
+        var profesion = "";
+        
 
 
-        document.writeln("<table border='1'> ");
+        nombre = prompt("¿Cuál es tu nombre?");
+        edad = prompt("¿Cuál es tu édad?");
+        localidad = prompt("¿Cuál es tu localiad?");
+        profesion = prompt("¿Cuál es tu profesion?");
+
+        var respuesta = confirm("¿Todos los datos son correctos? " + 
+                    "\n Nombre: "   +nombre+
+                    "\n Edad: "     +edad+
+                    "\n Localidad: "+localidad+
+                    "\n Profesión: "+profesion);
+
+        if(respuesta){
+            document.writeln("<center>");
+
+            document.writeln("<table border='1'> ");
             //Renglon 1
             document.writeln("<tr>");
-                // Columna 1
+            // Columna 1
                 document.writeln("<td rowspan='4'>");
-                document.writeln("<img src='icono_perfil.jpg' width='200'>");
+                    document.writeln("<img src='icono_perfil.jpg' width='200'>");
                 document.writeln("</td>");
-                // Columna 2
-                document.writeln("<td >");
-                    document.writeln("<b>Nombre:</b> Alexis David Gomez Rios");
-                document.writeln("</td>");
+
+            // Columna 2
+             document.writeln("<td >");
+                document.writeln("<b>Nombre:</b> "+nombre);
+              document.writeln("</td>");
             document.writeln("</tr>");
 
             //Renglon 2
             document.writeln("<tr>");
-                // Columna 1
+            // Columna 1
                 document.writeln("<td>");
-                    document.writeln("<b>Edad:</b> 19 años");
-                document.writeln("</td>");  
+                    document.writeln("<b>Edad:</b> "+edad+" años");
+                document.writeln("</td>");
             document.writeln("</tr>");
 
             //Renglon 3
             document.writeln("<tr>");
-                // Columna 1
+            // Columna 1
                 document.writeln("<td>");
-                    document.writeln("<b>Localidad:</b> Morelos, México")
-                document.writeln("</td>"); 
+                    document.writeln("<b>Localidad:</b> "+localidad)
+                document.writeln("</td>");
             document.writeln("</tr>");
 
             //Renglon 4
             document.writeln("<tr>");
-                // Columna 1
+            // Columna 1
                 document.writeln("<td>");
-                    document.writeln("<b>Profesión:</b> Alumno")
+                    document.writeln("<b>Profesión:</b> "+profesion);
                 document.writeln("</td>");
+
             document.writeln("</tr>");
-        document.writeln("</table> ");
-        document.writeln("</center>");
+            document.writeln("</table> ");
+            document.writeln("</center>");
+        }else{
+            alert("¡Gracias por visitarnos!");
+        }
+        
+
+        
     </script>
 </head>
 <body>
